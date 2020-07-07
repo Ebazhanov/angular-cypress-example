@@ -1,0 +1,15 @@
+<button (click)="showLoginForm()">Login</button>
+<button (click)="showRegisterForm()">Register</button>
+<button (click)="showRegisterFormBuilder()">Register Builder</button>
+<div class="container" *ngIf="loginForm">
+  <app-login-builder>
+  </app-login-builder>
+</div>
+<div class="container" *ngIf="registerForm">
+  <app-register>
+  </app-register>
+</div>
+<div class="container" *ngIf="registerFormBuilder">
+  <app-register-form-builder>
+  </app-register-form-builder>
+</div>

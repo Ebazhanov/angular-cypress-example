@@ -1,0 +1,32 @@
+<h2 class="text-center">User Registration</h2>
+<form class="col-md-6 offset-3"
+      (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+  <div class="form-group row">
+    <label for="email" class="col">Email</label>
+    <input class="form-control" id="email" type="email" formControlName="email">
+  </div>
+  <div class="alert alert-danger" role="alert"
+       *ngIf="registerForm.get('email').invalid && registerForm.get('email').touched">
+    Invalid Email!
+  </div>
+  <fieldset formGroupName="pwGroup">
+    <div class="form-group row">
+      <label for="password" class="col">Password</label>
+      <input class="form-control" id="password" type="password" formControlName="password">
+    </div>
+    <div class="form-group row">
+      <label for="password-confirm">Confirm Password</label>
+      <input class="form-control" id="password-confirm" type="password" formControlName="confirmPassword">
+    </div>
+  </fieldset>
+  <div class="alert alert-danger" role="alert"
+       *ngIf="registerForm.hasError('passwordNotMatch', 'pwGroup') && registerForm.get('pwGroup').touched">
+    Password does not match!
+  </div>
+  <div class="form-group">
+    <button class="btn btn-info" type="submit">Submit</button>
+  </div>
+</form>
+<pre>
+  {{registerForm.value | json}}
+</pre>

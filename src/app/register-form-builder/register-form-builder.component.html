@@ -1,0 +1,115 @@
+<h2 class="text-center">User Registration Builder</h2>
+<form class="col-md-6 offset-3"
+      (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+
+  <div class="form-group row">
+    <label for="email" class="col">Email</label>
+    <input class="form-control" id="email" type="email" formControlName="email">
+  </div>
+
+  <div *ngIf="registerForm.get('email').invalid && registerForm.touched">
+    <div class="alert alert-danger" role="alert"
+         *ngIf="registerForm.get('email').hasError('email')">
+      Invalid Email!
+    </div>
+    <div class="alert alert-danger" role="alert"
+         *ngIf="registerForm.get('email').hasError('required')">
+      Please enter a Email!
+    </div>
+  </div>
+
+  <fieldset formGroupName="pwGroup">
+    <div class="form-group row">
+      <label for="password" class="col">Password</label>
+      <input class="form-control" id="password" type="password" formControlName="password">
+    </div>
+    <div class="form-group row">
+      <label for="password-confirm">Confirm Password</label>
+      <input class="form-control" id="password-confirm" type="password" formControlName="confirmPassword">
+    </div>
+  </fieldset>
+
+  <div *ngIf="registerForm.get('pwGroup').invalid && registerForm.touched">
+    <div class="alert alert-danger" role="alert"
+         *ngIf="registerForm.get('pwGroup').get('password').hasError('minlength')">
+      Min Length is 6!
+    </div>
+    <div class="alert alert-danger" role="alert"
+         *ngIf="registerForm.hasError('passwordNotMatch', 'pwGroup')">
+      Password does not match!
+    </div>
+    <div class="alert alert-danger" role="alert"
+         *ngIf="registerForm.get('pwGroup').get('password').hasError('required')">
+      Please enter your password!
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="country" class="col">Country</label>
+    <select id="country" class="form-control" formControlName="country">
+      <option [ngValue]="country" *ngFor="let country of countries">
+        {{country}}
+      </option>
+    </select>
+  </div>
+
+  <div class="alert alert-danger" role="alert"
+       *ngIf="registerForm.get('country').hasError('required') && registerForm.get('country').touched">
+    Please choose a country
+  </div>
+
+  <div class="form-group row">
+    <label for="age" class="col">Age</label>
+    <input class="form-control" id="age" type="text" formControlName="age">
+  </div>
+
+  <div *ngIf="registerForm.touched">
+    <div class="alert alert-danger" role="alert"
+         *ngIf="registerForm.hasError('ageNotValid')">
+      You are too small for this site!
+    </div>
+    <div class="alert alert-danger" role="alert"
+         *ngIf="registerForm.get('age').hasError('required')">
+      Please enter your age!
+    </div>
+  </div>
+
+  <fieldset class="form-group row">
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+      <div *ngFor="let gender of gender" class="form-check-inline">
+        <input class="form-check-input" id="{{gender}}" type="radio" value="{{gender}}" formControlName="gender">
+        <label class="form-check-label" for="{{gender}}">{{gender}}</label>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="alert alert-danger" role="alert"
+       *ngIf="registerForm.get('gender').hasError('required') && registerForm.get('gender').touched">
+    Please choose a gender!
+  </div>
+
+  <div class="form-group row">
+    <label for="telephone">Telephone</label>
+    <input class="form-control" id="telephone" type="text" formControlName="telephone">
+  </div>
+
+  <div *ngIf="registerForm.touched">
+    <div class="alert alert-danger" role="alert"
+         *ngIf="registerForm.hasError('telephoneNotValid')">
+      Telephone not Valid!
+    </div>
+    <div class="alert alert-danger" role="alert"
+         *ngIf="registerForm.get('telephone').hasError('required')">
+      Please enter a phone Number!
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-info" type="submit">Submit</button>
+  </div>
+</form>
+
+<pre>
+  {{registerForm.value | json}}
+</pre>
