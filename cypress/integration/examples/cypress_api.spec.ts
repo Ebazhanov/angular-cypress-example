@@ -2,7 +2,7 @@
 
 context('Cypress.Commands', () => {
   beforeEach(() => {
-    cy.visit('https://example.cypress.io/cypress-api')
+    cy.visit('/')
   })
 
   // https://on.cypress.io/custom-commands
