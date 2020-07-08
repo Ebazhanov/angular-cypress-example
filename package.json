@@ -9,6 +9,7 @@
     "lint": "ng lint",
     "cy:open": "npm run start & sleep 18 && npx cypress open",
     "cy:run": "npm run start & sleep 18 && cypress run --browser chrome --spec ./cypress/integration/login-fields.spec.ts"
+    "e2e": "cypress run --browser chrome --spec ./cypress/integration/login-fields.spec.ts"
   },
   "private": true,
   "dependencies": {

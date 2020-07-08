@@ -8,7 +8,6 @@
 
 - [ ] make it run in local Docker
 
-
 ## Usage
 - `npm run cy:open` run tests from Cypress UI test runner
 - `npm run cy:run` run tests directly from command line 

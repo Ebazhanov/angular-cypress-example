@@ -1,21 +1,15 @@
-name: E2E
+name: End-to-end tests
 on: [push]
 jobs:
-  basic:
+  cypress-run:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Cypress tests
-        # normally you would write
-        # uses: cypress-io/github-action@v2
-        uses: ./
-        # the parameters below are only necessary
-        # because we are running these examples in a monorepo
+      - name: Cypress run
+        uses: cypress-io/github-action@v1
         with:
-          working-directory: E2E
-          # just for full picture after installing Cypress
-          # print information about detected browsers, etc
-          # see https://on.cypress.io/command-line#cypress-info
-          build: npm run cy:run
+          build: npm run start
+          start: npm run e2e
+          wait-on: http://localhost:4200
