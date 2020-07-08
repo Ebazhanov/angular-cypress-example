@@ -6,11 +6,11 @@
     <input class="form-control" id="email" type="email" formControlName="email">
   </div>
   <div *ngIf="loginForm.get('email').invalid && loginForm.touched">
-    <div class="alert alert-danger" role="alert"
+    <div class="email alert alert-danger" role="alert"
          *ngIf="loginForm.get('email').hasError('email')">
       Invalid Email!
     </div>
-    <div class="alert alert-danger" role="alert"
+    <div class="email alert alert-danger" role="alert"
          *ngIf="loginForm.get('email').hasError('required')">
       Please provide an email!
     </div>
@@ -20,11 +20,11 @@
     <input class="form-control" id="password" type="password" formControlName="password">
   </div>
   <div *ngIf="loginForm.get('password').invalid && loginForm.touched">
-    <div class="alert alert-danger" role="alert"
+    <div class="password alert alert-danger" role="alert"
          *ngIf="loginForm.get('password').hasError('required')">
       Please enter your password!
     </div>
-    <div class="alert alert-danger" role="alert"
+    <div class="password alert alert-danger" role="alert"
          *ngIf="loginForm.get('password').hasError('minlength')">
       Password must be 6 min length
     </div>

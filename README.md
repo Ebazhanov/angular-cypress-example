@@ -1,9 +1,11 @@
 ## Angular(typescript) + Cypress
 
 ## TODO
-- [ ] design and implement tests for `login page`
+- [x] design and implement tests for `login page` with POM
+<img src="https://monosnap.com/image/4ZUY8T1BC15FB8liWpoGtCGZIIOkEZ"/>
 - [ ] make it run in local docker
 - [ ] *as an option run in cirlci
 
 ## Usage
-- `npm run e2e`
+- `npm run cy:open` run tests from Cypress UI test runner
+- `npm run cy:run` run tests directly from command line 
