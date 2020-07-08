@@ -10,6 +10,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v1
         with:
-          build: npm run start
-          start: npm run e2e
+          start: npm run start
+          build: npm run e2e
           wait-on: http://localhost:4200
