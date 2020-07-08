@@ -1,12 +1,21 @@
 name: E2E
 on: [push]
 jobs:
-  chrome:
+  basic:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v1
-      - uses: cypress-io/github-action@v1
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Cypress tests
+        # normally you would write
+        # uses: cypress-io/github-action@v2
+        uses: ./
+        # the parameters below are only necessary
+        # because we are running these examples in a monorepo
         with:
-          browser: chrome
-          headless: true
+          working-directory: E2E
+          # just for full picture after installing Cypress
+          # print information about detected browsers, etc
+          # see https://on.cypress.io/command-line#cypress-info
+          build: cy:run
