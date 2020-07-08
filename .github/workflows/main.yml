@@ -18,4 +18,4 @@ jobs:
           # just for full picture after installing Cypress
           # print information about detected browsers, etc
           # see https://on.cypress.io/command-line#cypress-info
-          build: cy:run
+          build: npm run cy:run
