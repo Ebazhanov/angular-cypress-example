@@ -5,7 +5,6 @@
 <img src="https://monosnap.com/image/4ZUY8T1BC15FB8liWpoGtCGZIIOkEZ"/>
 
 - [x] integrate with github actions [DEMO](https://github.com/Ebazhanov/angular-cypress-example/runs/849033662?check_suite_focus=true)
-
 - [x] fix angular errors in console coming from `npm run`
 
 ## Usage
