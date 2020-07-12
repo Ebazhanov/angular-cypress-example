@@ -1,4 +1,4 @@
-## Angular(typescript) + Cypress
+## Angular(typescript) + Cypress(typescript)
 
 ## TODO
 - [x] design and implement tests for `login page` with POM
@@ -6,7 +6,7 @@
 
 - [x] integrate with github actions [DEMO](https://github.com/Ebazhanov/angular-cypress-example/runs/849033662?check_suite_focus=true)
 
-- [ ] fix angular errors in console due npm run
+- [x] fix angular errors in console coming from `npm run`
 
 ## Usage
 - `npm run cy:open` run tests from Cypress UI test runner
